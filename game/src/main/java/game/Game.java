@@ -5,7 +5,7 @@ import game.Exceptions.BiteWallException;
 import game.Exceptions.ThereIsNoPointsLeftException;
 
 public class Game implements ControllerListener {
-
+    
     private final Board board;
     private final Snake snake;
     private Food food;
@@ -44,14 +44,13 @@ public class Game implements ControllerListener {
     }
 
     public void run() throws BiteItselfException, BiteWallException {
-        this.stepsCalc = new StepsCalculator(2.5);
+        this.stepsCalc = new StepsCalculator(5);
 
         try {
             this.food = this.buildFood();
             this.render();
             this.mainLoop();
         } catch (ThereIsNoPointsLeftException e) {
-            // the player won
         }
     }
 

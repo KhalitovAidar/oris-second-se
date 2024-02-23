@@ -134,7 +134,7 @@ public class Board implements Iterable<Point> {
     }
 
     @NotNull Snake buildSnake() {
-        var point = this.randomPoint();
+        Point point = this.randomPoint();
         Direction direction;
 
         if (this.isAPointInside(new Point(point.getX(), point.getY() - 1))) {
